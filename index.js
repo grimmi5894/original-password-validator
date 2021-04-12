@@ -25,9 +25,9 @@ const validatePassword = (password) => {
             special++
             // Must contain at least one special character
         }
+        return lower > 0 && upper > 0 && numeric > 0 && special > 0
     }
 }
     //returns true when all requirements are met
-
-
+    
 module.exports = validatePassword
