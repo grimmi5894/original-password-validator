@@ -1,8 +1,8 @@
 const isLowercase = (password, index) => {
-    return (password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122)
+    return (password.charCodeAt(index) >= 97 && password.charCodeAt(i) <= 122)
 }
 const isUppercase = (password, index) => {
-    return (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90)
+    return (password.charCodeAt(index) >= 65 && password.charCodeAt(i) <= 90)
 }
 const isNumeric = (password, index) => {
     return !isNaN(password[index])
@@ -18,20 +18,14 @@ const validatePassword = (password) => {
     for(i=0; i < password.length; i++) {
         if (isLowercase(password, i)) {
             lower++
-            // Must contain at least one lower case letter
         } else if (isUppercase(password, i)) {
             upper++
-            // Must contain at least one upper case letter
         } else if (isNumeric(password, i)) {
             numeric++
-            // Must contain at least one numeric value
         } else {
             special++
-            // Must contain at least one special character
         }
-        return lower > 0 && upper > 0 && numeric > 0 && special > 0
     }
+    return lower > 0 && upper > 0 && numeric > 0 && special > 0
 }
-    //returns true when all requirements are met
-
 module.exports = validatePassword
