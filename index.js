@@ -1,8 +1,8 @@
 const isLowercase = (password, index) => {}
 const isUppercase = (password, index) => {}
-const isNumeric = (password, index) => {}
-const isSpecial = (password, index) => {}
-
+const isNumeric = (password, index) => {
+    return !isNaN(password[index])
+}
 const validatePassword = (password) => {
     if (password.length < 8) return false
 
@@ -29,5 +29,5 @@ const validatePassword = (password) => {
     }
 }
     //returns true when all requirements are met
-    
+
 module.exports = validatePassword
