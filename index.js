@@ -1,26 +1,33 @@
+const isLowercase = (password, index) => {}
+const isUppercase = (password, index) => {}
+const isNumeric = (password, index) => {}
+const isSpecial = (password, index) => {}
+
 const validatePassword = (password) => {
-// Must be a minimum of 8 characters
     if (password.length < 8) return false
-// Must contain at least one lower case letter
 
-// Must contain at least one upper case letter
+    let upper = 0
+    let lower = 0
+    let numeric = 0
+    let special = 0
 
-// Must contain at least one numeric value
-
-// Must contain at least one special character
-
-//returns true when all requirements are met
+    for(i=0; i < password.length; i++) {
+        if (isLowercase(password, i)) {
+            lower++
+            // Must contain at least one lower case letter
+        } else if (isUppercase(password, i)) {
+            upper++
+            // Must contain at least one upper case letter
+        } else if (isNumeric(password, i)) {
+            numeric++
+            // Must contain at least one numeric value
+        } else {
+            special++
+            // Must contain at least one special character
+        }
+    }
 }
-
-
-
-
-
-
-
-
-
-
+    //returns true when all requirements are met
 
 
 module.exports = validatePassword
