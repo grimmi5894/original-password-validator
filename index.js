@@ -1,5 +1,9 @@
-const isLowercase = (password, index) => {}
-const isUppercase = (password, index) => {}
+const isLowercase = (password, index) => {
+    return (password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122)
+}
+const isUppercase = (password, index) => {
+    return (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90)
+}
 const isNumeric = (password, index) => {
     return !isNaN(password[index])
 }
